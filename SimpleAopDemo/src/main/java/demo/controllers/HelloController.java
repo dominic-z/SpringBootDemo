@@ -31,8 +31,11 @@ public class HelloController {
     HelloService helloService;
 
     @RequestMapping(value = "hello", method = {RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String hello(@RequestBody MyRequest req) {
+    public String hello(@RequestBody MyRequest req) throws InterruptedException {
         String res = helloService.sayHello();
+        if(req.getReqId().equals("A")){
+            Thread.sleep(5000);
+        }
         return res;
     }
 
