@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @date 2020/8/12 10:20 上午
  */
 
-//@RestController
+@RestController
 public class HelloController {
     @Resource(name = "singleBanana1")
     Banana1 banana1;

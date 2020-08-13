@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MyAspect {
-    @Pointcut("execution(public * demo.controllers.HelloController.*(..))")
+    @Pointcut("execution(public * demo.controllers.HelloController.he*o(..))")
     public void plainPointCut(){}
 
     @Around("demo.aop.MyAspect.plainPointCut()")
@@ -143,13 +143,14 @@ public class MyAspect {
     }
 
 
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.RequestMapping)")
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.RequestMapping)")//对有这个注解的方法进行aop
     public void atAnnoPointCut(){}
     @Around("demo.aop.MyAspect.atAnnoPointCut()")
     public Object doInAspectWithAtAnnoPt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
         System.out.println("@Anno start");
         Object retVal = pjp.proceed();
+        System.out.println(pjp.getSignature());
         // stop stopwatch
         System.out.println("@Anno stop");
         return retVal;
