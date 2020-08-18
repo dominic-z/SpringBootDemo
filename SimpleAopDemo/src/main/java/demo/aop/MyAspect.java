@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MyAspect {
-    @Pointcut("execution(public * demo.controllers.HelloController.he*o(..))")
+    @Pointcut("execution(public * demo.controllers.HelloController.he*o*(..))")
     public void plainPointCut(){}
 
     @Around("demo.aop.MyAspect.plainPointCut()")
