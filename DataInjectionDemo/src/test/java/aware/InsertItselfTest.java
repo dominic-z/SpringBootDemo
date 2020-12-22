@@ -28,6 +28,6 @@ public class InsertItselfTest {
         System.out.println(insertItself.getAc());
         Apple apple = insertItself.getAc().getBean("apple", Apple.class);
         System.out.println(apple);
-        System.out.println(insertItself.getName());
+        insertItself.sayHello();
     }
 }
