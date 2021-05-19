@@ -21,6 +21,7 @@
         <module>WebJsonDemo</module>
         <module>DataInjectionDemo</module>
         <module>SimpleAopDemo</module>
+        <module>spring-feign-demo</module>
     </modules>
     <dependencies>
         <dependency>
