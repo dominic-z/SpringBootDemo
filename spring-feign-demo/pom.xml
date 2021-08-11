@@ -21,6 +21,19 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>${spring.cloud.starter.openfein.version}</version>
+<!--            通过mvn -Dverbose dependency:tree或者看idea里的maven窗口按ctrl和+展开，搜索jackson-annotations-->
+<!--            这个jar包引入的jackson版本为2.4.3 而spring-boot的2.3.1版本引入的jackson为2.11.0，mvn在处理冲突的时候，把feign工程2.4.3的annotation留下来了，也将2.11.0的jackson的data-bind也留下来-->
+<!--            造成了版本冲突，导致找不到类-->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotations</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import toolkits.clients.ConfiguredDemoClient;
 import toolkits.clients.DemoClient;
 import toolkits.messages.DemoRequest;
 import toolkits.messages.DemoResponse;
@@ -22,6 +23,9 @@ public class DemoService {
     @Autowired
     private DemoClient demoClient;
 
+    @Autowired
+    private ConfiguredDemoClient configuredDemoClient;
+
     @RequestMapping(value = "hello", method = {RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
     public DemoResponse hello(@RequestBody DemoRequest req) {
         DemoResponse resp = new DemoResponse();
@@ -33,5 +37,10 @@ public class DemoService {
     @RequestMapping(value = "post_client", method = {RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
     public String postClient(@RequestBody DemoRequest req) {
         return demoClient.post(req);
+    }
+
+    @RequestMapping(value = "configured_post_client", method = {RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String configuredPostClient(@RequestBody DemoRequest req) {
+        return configuredDemoClient.post(req);
     }
 }
