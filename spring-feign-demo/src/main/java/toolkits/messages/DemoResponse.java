@@ -10,5 +10,5 @@ import lombok.Data;
  */
 @Data
 public class DemoResponse {
-    private int i;
+    private String content;
 }

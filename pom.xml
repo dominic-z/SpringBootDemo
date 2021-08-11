@@ -22,6 +22,7 @@
         <module>DataInjectionDemo</module>
         <module>SimpleAopDemo</module>
         <module>spring-feign-demo</module>
+        <module>local-server</module>
     </modules>
     <dependencies>
         <dependency>
