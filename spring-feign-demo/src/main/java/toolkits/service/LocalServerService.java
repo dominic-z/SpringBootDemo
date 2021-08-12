@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import toolkits.clients.ConfiguredHttpBinClient;
-import toolkits.clients.HttpBinClient;
 import toolkits.clients.LocalServerClient;
 import toolkits.messages.DemoRequest;
 import toolkits.messages.DemoResponse;
