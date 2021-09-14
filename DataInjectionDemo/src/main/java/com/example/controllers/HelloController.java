@@ -4,7 +4,7 @@ package com.example.controllers;
 import com.example.components.Banana1;
 import com.example.components.Banana2;
 import com.example.messages.MyRequest;
-import com.example.utils.SpringContextUtil;
+import com.example.config.SpringContextConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
@@ -29,9 +29,13 @@ public class HelloController {
     @Qualifier("singleBanana2")
     Banana2 banana2;
 
+    @Autowired
+    private SpringContextConfig springContextConfig;
+
     @RequestMapping(value = "hello", method = {RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
     public String hello(@RequestBody MyRequest req) {
-        Object apple = SpringContextUtil.applicationContext.getBean("apple");
+
+        Object apple = springContextConfig.getApplicationContext().getBean("apple");
         System.out.println(apple);
         System.out.println(banana1);
         System.out.println(banana2);

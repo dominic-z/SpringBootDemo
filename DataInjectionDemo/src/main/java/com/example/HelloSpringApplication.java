@@ -1,23 +1,30 @@
 package com.example;
 
-import com.example.utils.SpringContextUtil;
-import org.springframework.beans.BeansException;
+import com.example.config.SpringContextConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @author dominiczhu
  * @date 2020/8/12 10:19 上午
  */
 
-@SpringBootApplication
-public class HelloSpringApplication {
+@SpringBootApplication // 该注解自带了componentScan
+@ComponentScan(basePackages = {"somewhere.service","com.example"})
+public class HelloSpringApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(HelloSpringApplication.class,args);
-        System.out.println(SpringContextUtil.applicationContext.getBean("argApple"));;
     }
 
+    @Autowired
+    private SpringContextConfig springContextConfig;
+
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println(springContextConfig.getApplicationContext().getBean("argApple"));
+
+    }
 }
