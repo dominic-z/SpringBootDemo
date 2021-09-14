@@ -1,8 +1,8 @@
 package demo.controllers;
 
-import demo.components.Banana1;
-import demo.components.Banana2;
-import demo.messages.MyRequest;
+import demo.domain.pojo.Banana1;
+import demo.domain.pojo.Banana2;
+import demo.domain.messages.MyRequest;
 import demo.services.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

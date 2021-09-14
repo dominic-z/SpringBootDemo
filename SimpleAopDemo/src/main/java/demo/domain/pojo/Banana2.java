@@ -1,4 +1,4 @@
-package demo.components;
+package demo.domain.pojo;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

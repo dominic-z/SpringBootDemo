@@ -20,10 +20,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.plainPointCut()")
     public Object doInAspectWithPlainPt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("plain pt start");
+        System.out.println("[aop] plain pt start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("plain pt stop");
+        System.out.println("[aop] plain pt stop");
         return retVal;
     }
 
@@ -34,10 +34,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.withinPointCut()")
     public Object doInAspectWithWithinPt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("within start");
+        System.out.println("[aop] within start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("within stop");
+        System.out.println("[aop] within stop");
         return retVal;
     }
 
@@ -46,10 +46,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.target1PointCut()")
     public Object doInAspectWithTarget1Pt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("target1 start");
+        System.out.println("[aop] target1 start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("target1 stop");
+        System.out.println("[aop] target1 stop");
         return retVal;
     }
 
@@ -59,10 +59,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.target2PointCut()")
     public Object doInAspectWithTarget2Pt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("target2 start");
+        System.out.println("[aop] target2 start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("target2 stop");
+        System.out.println("[aop] target2 stop");
         return retVal;
     }
 
@@ -71,10 +71,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.target3PointCut()")
     public Object doInAspectWithTarget3Pt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("target3 start");
+        System.out.println("[aop] target3 start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("target3 stop");
+        System.out.println("[aop] target3 stop");
         return retVal;
     }
 
@@ -84,10 +84,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.this1PointCut()")
     public Object doInAspectWithThis1Pt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("target1 start");
+        System.out.println("[aop] this1 start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("this1 stop");
+        System.out.println("[aop] this1 stop");
         return retVal;
     }
 
@@ -97,10 +97,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.this2PointCut()")
     public Object doInAspectWithThis2Pt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("this2 start");
+        System.out.println("[aop] this2 start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("this2 stop");
+        System.out.println("[aop] this2 stop");
         return retVal;
     }
 
@@ -109,10 +109,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.this3PointCut()")
     public Object doInAspectWithThis3Pt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("this3 start");
+        System.out.println("[aop] this3 start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("this3 stop");
+        System.out.println("[aop] this3 stop");
         return retVal;
     }
 //
@@ -135,10 +135,10 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.atWithinPointCut()")
     public Object doInAspectWithAtWithinPt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("@within start");
+        System.out.println("[aop] @within start");
         Object retVal = pjp.proceed();
         // stop stopwatch
-        System.out.println("@within stop");
+        System.out.println("[aop] @within stop");
         return retVal;
     }
 
@@ -148,11 +148,11 @@ public class MyAspect {
     @Around("demo.aop.MyAspect.atAnnoPointCut()")
     public Object doInAspectWithAtAnnoPt(ProceedingJoinPoint pjp) throws Throwable{
         // start stopwatch
-        System.out.println("@Anno start");
+        System.out.println("[aop] @Anno start");
         Object retVal = pjp.proceed();
         System.out.println(pjp.getSignature());
         // stop stopwatch
-        System.out.println("@Anno stop");
+        System.out.println("[aop] @Anno stop");
         return retVal;
     }
 }

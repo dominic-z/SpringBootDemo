@@ -8,9 +8,19 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class HelloService {
-    public String sayHello(){
-        String res="hello in HelloService";
+    public String sayHello() {
+        String res = "hello in HelloService";
         System.out.println(res);
         return res;
+    }
+
+    public String sayHelloForSelf() {
+        String res = "helloSelf in HelloService";
+        System.out.println(res);
+        return res;
+    }
+
+    public String callSelf() {
+        return sayHelloForSelf();
     }
 }

@@ -1,4 +1,4 @@
-package demo.messages;
+package demo.domain.messages;
 
 import lombok.Data;
 
